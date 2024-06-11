@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "83866223967",
+    "project_id": "business-whatsapp-flutter",
+    "storage_bucket": "business-whatsapp-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83866223967:android:b3a01955bfb664add3e2ea",
+        "android_client_info": {
+          "package_name": "com.mughaltech.chat_message_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB_nRpzSyooU4bYdpJYoi5gn61KntFGWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
