@@ -20,7 +20,7 @@ class ForgotPasswordController with ChangeNotifier {
       auth.sendPasswordResetEmail(email: email).then((value) {
         setLoading(false);
         Navigator.of(context).pushReplacementNamed(LoginView.routeName);
-        Utils.toastMessage(message: "Please check your email\nto recover your password!");
+        Utils.toastMessage(message: "Please check your email\nto recover your Password!");
       }).onError((error, stackTrace) {
         setLoading(false);
         Utils.toastMessage(message: error.toString());
