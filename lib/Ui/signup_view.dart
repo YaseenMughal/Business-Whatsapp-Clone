@@ -115,6 +115,7 @@ class _SignUpViewState extends State<SignUpView> {
                         text: "SignUp",
                         isLoading: value.isLoading,
                         onTap: () {
+                          // SharedPreferences sharedPreferences = SharedPreferences();
                           if (_formKey.currentState!.validate()) {
                             value.signUp(context, _tfcUsername.text, _tfcEmail.text, _tfcPassword.text);
                             log("username: ${_tfcUsername.text} | email: ${_tfcEmail.text} | password: ${_tfcPassword.text}");

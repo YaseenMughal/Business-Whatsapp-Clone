@@ -1,12 +1,8 @@
 import 'dart:developer';
-
 import 'package:chat_message_app/Controller/forgot_password_controller.dart';
-import 'package:chat_message_app/Controller/login_controller.dart';
 import 'package:chat_message_app/Res/colors_res.dart';
 import 'package:chat_message_app/Res/component/button_res.dart';
 import 'package:chat_message_app/Res/component/textField_res.dart';
-import 'package:chat_message_app/Ui/signup_view.dart';
-import 'package:chat_message_app/Utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -84,7 +80,9 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                           value.forgotPassword(context, _tfcEmail.text);
                           // value.login(context, _tfcEmail.text, _tfcPassword.text);
                           log("email: ${_tfcEmail.text}");
-                        } else {}
+                        } else {
+                          
+                        }
                       },
                     ),
                   ],

@@ -1,12 +1,13 @@
+
 import 'package:chat_message_app/Constant/widget_constant/bottom_navigation_bar.dart';
 import 'package:chat_message_app/Controller/forgot_password_controller.dart';
 import 'package:chat_message_app/Controller/login_controller.dart';
 import 'package:chat_message_app/Controller/signup_controller.dart';
 import 'package:chat_message_app/Res/colors_res.dart';
+import 'package:chat_message_app/Ui/HomePopupmenu/setting_view.dart';
 import 'package:chat_message_app/Ui/dashboard_view.dart';
 import 'package:chat_message_app/Ui/forgot_password_view.dart';
 import 'package:chat_message_app/Ui/login_view.dart';
-import 'package:chat_message_app/Ui/popUpMenuItem/Settings_view.dart';
 import 'package:chat_message_app/Ui/signup_view.dart';
 import 'package:chat_message_app/Ui/splash_view.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -40,7 +41,9 @@ class MyApp extends StatelessWidget {
             useMaterial3: true,
             scaffoldBackgroundColor: AppColor.whiteColor,
             appBarTheme: const AppBarTheme(
-                color: AppColor.primaryColor, titleTextStyle: TextStyle(fontSize: 18.0, color: AppColor.whiteColor, fontWeight: FontWeight.w400, fontFamily: "Kanit"))),
+                iconTheme: IconThemeData(color: AppColor.whiteColor),
+                color: AppColor.primaryColor,
+                titleTextStyle: TextStyle(fontSize: 18.0, color: AppColor.whiteColor, fontWeight: FontWeight.w400, fontFamily: "Kanit"))),
         debugShowCheckedModeBanner: false,
         routes: {
           SplashView.routeName: (BuildContext context) => const SplashView(),

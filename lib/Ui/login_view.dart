@@ -112,6 +112,7 @@ class _LoginViewState extends State<LoginView> {
                       onTap: () {
                         if (_formKey.currentState!.validate()) {
                           value.login(context, _tfcEmail.text, _tfcPassword.text);
+                          
                           log("email: ${_tfcEmail.text} | password: ${_tfcPassword.text}");
                         } else {}
                       },
