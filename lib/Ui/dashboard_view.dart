@@ -1,6 +1,7 @@
 import 'package:chat_message_app/Constant/widget_constant/image_widget.dart';
 import 'package:chat_message_app/Res/colors_res.dart';
 import 'package:chat_message_app/Ui/HomePopupmenu/setting_view.dart';
+import 'package:chat_message_app/Ui/user_chat_view.dart';
 import 'package:flutter/material.dart';
 
 class DashboardView extends StatefulWidget {
@@ -203,7 +204,7 @@ class _DashboardViewState extends State<DashboardView> with SingleTickerProvider
                 child: TabBarView(
                   controller: _tabController,
                   children: [
-                     allUserChat(),
+                    allUserChat(),
                     _buildTabContent("Unread Messages"),
                     _buildTabContent("Group's Messages"),
                   ],
@@ -240,7 +241,7 @@ class _DashboardViewState extends State<DashboardView> with SingleTickerProvider
       itemBuilder: (context, index) {
         return ListTile(
           onTap: () {
-            // Navigator.of(context).push(MaterialPageRoute(builder: (context) => const UserMessageView()));
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  UserChatView(name: chatMessages[index]["name"] ?? '', image:chatMessages[index]["image"] ?? '' ,)));
           },
           contentPadding: const EdgeInsets.symmetric(horizontal: 5.0),
           leading: InkWell(

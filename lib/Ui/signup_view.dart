@@ -8,6 +8,7 @@ import 'package:chat_message_app/Utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignUpView extends StatefulWidget {
   static const routeName = '/signup';
@@ -110,19 +111,32 @@ class _SignUpViewState extends State<SignUpView> {
                     ),
                     SizedBox(height: deviceHeight * .04),
                     Align(
-                      alignment: Alignment.center,
-                      child: AppButton(
-                        text: "SignUp",
-                        isLoading: value.isLoading,
-                        onTap: () {
-                          // SharedPreferences sharedPreferences = SharedPreferences();
-                          if (_formKey.currentState!.validate()) {
-                            value.signUp(context, _tfcUsername.text, _tfcEmail.text, _tfcPassword.text);
-                            log("username: ${_tfcUsername.text} | email: ${_tfcEmail.text} | password: ${_tfcPassword.text}");
-                          }
-                        },
-                      ),
-                    ),
+                        alignment: Alignment.center,
+                        child: FutureBuilder(
+                          future: SharedPreferences.getInstance(),
+                          builder: (BuildContext context, AsyncSnapshot<SharedPreferences> snapshot) {
+                            return AppButton(
+                              text: "SignUp",
+                              isLoading: value.isLoading,
+                              onTap: () async {
+                                // SharedPreferences sp = await SharedPreferences.getInstance();
+                                // sp.setString('user_name', _tfcUsername.text);
+                                // sp.setString('user_email', _tfcEmail.text);
+                                // sp.setString('user_password', _tfcPassword.text);
+
+                                // log('${sp.getString('user_name')}');
+                                // log('${sp.getString('user_email')}');
+                                // log('${sp.getString('user_password')}');
+
+                                if (_formKey.currentState!.validate()) {
+                                  value.signUp(context, _tfcUsername.text, _tfcEmail.text, _tfcPassword.text);
+                                  log("username: ${_tfcUsername.text} | email: ${_tfcEmail.text} | password: ${_tfcPassword.text}");
+                                }
+                              },
+                            );
+                          },
+                        ),
+                        ),
                   ],
                 ),
               );
